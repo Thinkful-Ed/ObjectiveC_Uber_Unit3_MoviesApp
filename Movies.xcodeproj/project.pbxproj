@@ -10,10 +10,10 @@
 		18ACBDF31B559FA800733580 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF21B559FA800733580 /* main.m */; };
 		18ACBDF61B559FA800733580 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF51B559FA800733580 /* AppDelegate.m */; };
 		18ACBDF91B559FA800733580 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF81B559FA800733580 /* ViewController.m */; };
-		18ACBDFC1B559FA800733580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18ACBDFA1B559FA800733580 /* Main.storyboard */; };
 		18ACBDFE1B559FA800733580 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18ACBDFD1B559FA800733580 /* Images.xcassets */; };
 		18ACBE011B559FA800733580 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18ACBDFF1B559FA800733580 /* LaunchScreen.xib */; };
 		18ACBE0D1B559FA800733580 /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBE0C1B559FA800733580 /* MoviesTests.m */; };
+		B013DB7EB5FDEB1B6A64F282 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 917A9CA54CC18EAC537264AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +34,14 @@
 		18ACBDF51B559FA800733580 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18ACBDF71B559FA800733580 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		18ACBDF81B559FA800733580 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18ACBDFB1B559FA800733580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18ACBDFD1B559FA800733580 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18ACBE001B559FA800733580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		18ACBE061B559FA800733580 /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ACBE0B1B559FA800733580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18ACBE0C1B559FA800733580 /* MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTests.m; sourceTree = "<group>"; };
+		47977281BCD9910D8F8FC5E0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5198B192C6674BFA01BDEAF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		917A9CA54CC18EAC537264AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B013DB7EB5FDEB1B6A64F282 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,8 @@
 				18ACBDEF1B559FA800733580 /* Movies */,
 				18ACBE091B559FA800733580 /* MoviesTests */,
 				18ACBDEE1B559FA800733580 /* Products */,
+				BC15B185998AD215E66EF5F6 /* Pods */,
+				22EC254C63394E960A49A888 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +90,6 @@
 				18ACBDF51B559FA800733580 /* AppDelegate.m */,
 				18ACBDF71B559FA800733580 /* ViewController.h */,
 				18ACBDF81B559FA800733580 /* ViewController.m */,
-				18ACBDFA1B559FA800733580 /* Main.storyboard */,
 				18ACBDFD1B559FA800733580 /* Images.xcassets */,
 				18ACBDFF1B559FA800733580 /* LaunchScreen.xib */,
 				18ACBDF01B559FA800733580 /* Supporting Files */,
@@ -119,6 +123,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22EC254C63394E960A49A888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				917A9CA54CC18EAC537264AF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC15B185998AD215E66EF5F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5198B192C6674BFA01BDEAF4 /* Pods.debug.xcconfig */,
+				47977281BCD9910D8F8FC5E0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18ACBE101B559FA800733580 /* Build configuration list for PBXNativeTarget "Movies" */;
 			buildPhases = (
+				458CDDD01336EBB4EB176223 /* Check Pods Manifest.lock */,
 				18ACBDE91B559FA800733580 /* Sources */,
 				18ACBDEA1B559FA800733580 /* Frameworks */,
 				18ACBDEB1B559FA800733580 /* Resources */,
+				C6A90DD085803A5B3FA52DD5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,7 +222,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18ACBDFC1B559FA800733580 /* Main.storyboard in Resources */,
 				18ACBE011B559FA800733580 /* LaunchScreen.xib in Resources */,
 				18ACBDFE1B559FA800733580 /* Images.xcassets in Resources */,
 			);
@@ -213,6 +235,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		458CDDD01336EBB4EB176223 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A90DD085803A5B3FA52DD5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18ACBDE91B559FA800733580 /* Sources */ = {
@@ -244,14 +299,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18ACBDFA1B559FA800733580 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18ACBDFB1B559FA800733580 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18ACBDFF1B559FA800733580 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -347,6 +394,7 @@
 		};
 		18ACBE111B559FA800733580 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5198B192C6674BFA01BDEAF4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Movies/Info.plist;
@@ -357,6 +405,7 @@
 		};
 		18ACBE121B559FA800733580 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47977281BCD9910D8F8FC5E0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Movies/Info.plist;
@@ -418,6 +467,7 @@
 				18ACBE121B559FA800733580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18ACBE131B559FA800733580 /* Build configuration list for PBXNativeTarget "MoviesTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +476,7 @@
 				18ACBE151B559FA800733580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

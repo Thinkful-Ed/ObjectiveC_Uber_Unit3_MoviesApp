@@ -7,16 +7,56 @@
 //
 
 #import "ViewController.h"
+#import "Masonry.h"
 
 @interface ViewController ()
 
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UITextView *movieTextView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Instantiate objects
+    self.searchBar = [UISearchBar new];
+    self.movieTextView = [UITextView new];
+    
+    //Add to view
+    [self.view addSubview:self.searchBar];
+    [self.view addSubview:self.movieTextView];
+    
+    //Customize search bar
+    self.searchBar.placeholder = @"Search movie title";
+    self.searchBar.delegate = self;
+    
+    //Customize movie text view
+    self.movieTextView.editable = NO;
+    
+    //Set up Masonry constraints
+    //type topLayoutGuide as UIView to use in Masonry
+    UIView *topLayoutGuide = (id)self.topLayoutGuide;
+    
+    [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.top.equalTo(topLayoutGuide.mas_bottom);
+    }];
+    [self.movieTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.searchBar.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+    }];
+
+    
+}
+
+#pragma mark UISearchBarDelegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

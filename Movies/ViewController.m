@@ -21,8 +21,8 @@
     [super viewDidLoad];
     
     //Instantiate objects
-    self.searchBar = [UISearchBar new];
-    self.movieTextView = [UITextView new];
+    self.searchBar = [[UISearchBar alloc] init];
+    self.movieTextView = [[UITextView alloc] init];
     
     //Add to view
     [self.view addSubview:self.searchBar];

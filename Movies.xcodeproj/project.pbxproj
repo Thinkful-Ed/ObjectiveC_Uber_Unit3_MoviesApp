@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18020F001B73D28E00F637F2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 18020EFF1B73D28E00F637F2 /* Movie.m */; };
 		18ACBDF31B559FA800733580 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF21B559FA800733580 /* main.m */; };
 		18ACBDF61B559FA800733580 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF51B559FA800733580 /* AppDelegate.m */; };
 		18ACBDF91B559FA800733580 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACBDF81B559FA800733580 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18020EFE1B73D28E00F637F2 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		18020EFF1B73D28E00F637F2 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		18ACBDED1B559FA800733580 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ACBDF11B559FA800733580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18ACBDF21B559FA800733580 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				18ACBDFD1B559FA800733580 /* Images.xcassets */,
 				18ACBDFF1B559FA800733580 /* LaunchScreen.xib */,
 				18ACBDF01B559FA800733580 /* Supporting Files */,
+				18020EFE1B73D28E00F637F2 /* Movie.h */,
+				18020EFF1B73D28E00F637F2 /* Movie.m */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			files = (
 				18ACBDF91B559FA800733580 /* ViewController.m in Sources */,
 				18ACBDF61B559FA800733580 /* AppDelegate.m in Sources */,
+				18020F001B73D28E00F637F2 /* Movie.m in Sources */,
 				18ACBDF31B559FA800733580 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

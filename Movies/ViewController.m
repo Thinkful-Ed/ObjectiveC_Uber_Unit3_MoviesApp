@@ -5,7 +5,7 @@
 //  Created by Craig on 14/07/2015.
 //  Copyright (c) 2015 Thinkful. All rights reserved.
 //
-
+#import "UIImageView+AFNetworking.h"
 #import "ViewController.h"
 #import "Masonry.h"
 #import "Movie.h"
@@ -104,6 +104,21 @@
     
     [self.movieTextView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(self.movieTextView.frame.size.height);
+    }];
+    
+    
+    //---------------------------
+    // Download image with AFNetworking
+    //Simple example:
+    //[self.moviePosterImageView setImageWithURL:[NSURL URLWithString:self.movie.posterURL]];
+    
+    //Then gets a bit more complicated if we want a success block:
+    __weak ViewController *weakSelf = (ViewController *) self;
+    [self.moviePosterImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.movie.posterURL]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        weakSelf.moviePosterImageView.image = image;
+        [weakSelf.activityIndicatorView stopAnimating];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        [weakSelf.activityIndicatorView stopAnimating];
     }];
 }
 -(void)receivedPosterImage:(UIImage *)posterImage {

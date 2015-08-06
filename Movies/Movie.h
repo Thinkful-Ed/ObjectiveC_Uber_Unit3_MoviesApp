@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *actors;
 @property (strong, nonatomic) NSString *plot;
+@property (strong, nonatomic) NSString *posterURL;
 
 -(void)searchMovie:(NSString *)movie;
 

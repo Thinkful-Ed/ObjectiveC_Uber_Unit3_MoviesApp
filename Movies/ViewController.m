@@ -110,8 +110,13 @@
     [self.moviePosterImageView setImage:posterImage];
     [self.activityIndicatorView stopAnimating];
 }
-
-
+-(void)receivedError:(NSString *)errorMessage {
+    self.movieTextView.text = errorMessage;
+    [self.activityIndicatorView stopAnimating];
+}
+-(void)receivedDownloadError {
+    [self.activityIndicatorView stopAnimating];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

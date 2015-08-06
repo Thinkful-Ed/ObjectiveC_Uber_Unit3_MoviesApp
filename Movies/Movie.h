@@ -12,6 +12,8 @@
 @protocol MovieDelegate
 -(void)updated;
 -(void)receivedPosterImage:(UIImage *)posterImage;
+-(void)receivedError:(NSString *)errorMessage;
+-(void)receivedDownloadError;
 @end
 
 @interface Movie : NSObject<NSURLSessionDelegate>

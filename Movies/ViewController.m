@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
+#import "Movie.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UITextView *movieTextView;
+@property (strong, nonatomic) Movie *movie;
 @end
 
 @implementation ViewController
@@ -21,8 +23,10 @@
     [super viewDidLoad];
     
     //Instantiate objects
-    self.searchBar = [UISearchBar new];
-    self.movieTextView = [UITextView new];
+    self.searchBar = [[UISearchBar alloc] init];
+    self.movieTextView = [[UITextView alloc] init];
+    self.movie = [[Movie alloc] init];
+    self.movie.delegate = self;
     
     //Add to view
     [self.view addSubview:self.searchBar];
@@ -57,46 +61,27 @@
 #pragma mark UISearchBarDelegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.searchBar resignFirstResponder];
-    
-    NSString *omdbSearchURL = [NSString stringWithFormat:@"http://www.omdbapi.com/?t=%@", searchBar.text];
-    omdbSearchURL = [omdbSearchURL stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:omdbSearchURL]
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self displayMovieData:json];
-        });
-
-    }];
-    
-    [dataTask resume];
+    [self.movie searchMovie:searchBar.text];
 }
-
--(void)displayMovieData:(NSDictionary *)json {
-    NSLog(@"%@",json);
-    
+#pragma mark MovieDelegate
+-(void)updated {
     /*
     //display movie data without formatting
     NSMutableString *dataString = [[NSMutableString alloc] init];
-    [dataString appendString:[NSString stringWithFormat:@"%@ \n", json[@"Title"]]];
-    [dataString appendString:[NSString stringWithFormat:@"%@ \n", json[@"Actors"]]];
-    [dataString appendString:[NSString stringWithFormat:@"%@ \n", json[@"Plot"]]];
+    [dataString appendString:[NSString stringWithFormat:@"%@ \n", self.movie.title]];
+    [dataString appendString:[NSString stringWithFormat:@"%@ \n", self.movie.actors]];
+    [dataString appendString:[NSString stringWithFormat:@"%@ \n", self.movie.plot]];
     self.movieTextView.text = dataString;
-    */
-    
-    
+     */
     //display movie data with formatting
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", json[@"Title"]]
-                                                                             attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]}]];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", json[@"Actors"]]
-                                                                             attributes:@{NSFontAttributeName: [UIFont italicSystemFontOfSize:14]}]];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", json[@"Plot"]]
-                                                                             attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12]}]];
-    self.movieTextView.attributedText = attributedString;
-    
+     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", self.movie.title]
+     attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]}]];
+     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", self.movie.actors]
+     attributes:@{NSFontAttributeName: [UIFont italicSystemFontOfSize:14]}]];
+     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n", self.movie.plot]
+     attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12]}]];
+     self.movieTextView.attributedText = attributedString;
 }
 
 - (void)didReceiveMemoryWarning {

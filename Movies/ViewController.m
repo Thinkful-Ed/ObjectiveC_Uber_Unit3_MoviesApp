@@ -8,11 +8,14 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
+#import "Movie.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UITextView *movieTextView;
+@property (strong, nonatomic) Movie *movie;
+
 @end
 
 @implementation ViewController
@@ -23,6 +26,9 @@
     //Instantiate objects
     self.searchBar = [[UISearchBar alloc] init];
     self.movieTextView = [[UITextView alloc] init];
+    self.movie = [[Movie alloc] init];
+    
+    self.movie.delegate = self;
     
     //Add to view
     [self.view addSubview:self.searchBar];
@@ -57,8 +63,12 @@
 #pragma mark UISearchBarDelegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.searchBar resignFirstResponder];
+    [self.movie searchMovie:searchBar.text];
 }
-
+#pragma mark MovieDelegate
+-(void)updated {
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
 
-@interface ViewController : UIViewController<UISearchBarDelegate>
+@interface ViewController : UIViewController<UISearchBarDelegate,MovieDelegate>
 
 
 @end

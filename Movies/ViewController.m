@@ -49,13 +49,11 @@
     self.activityIndicatorView.color = [UIColor grayColor];
     
     //Set up Masonry constraints
-    //type topLayoutGuide as UIView to use in Masonry
-    UIView *topLayoutGuide = (id)self.topLayoutGuide;
     
     [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
-        make.top.equalTo(topLayoutGuide.mas_bottom);
+        make.top.equalTo(self.mas_topLayoutGuide);
     }];
     [self.movieTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.searchBar.mas_bottom);
